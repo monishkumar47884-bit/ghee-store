@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GheePure – 100% Natural Cow Ghee</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4821A;
+    --gold-light: #F5A623;
+    --gold-pale: #FFF7E6;
+    --amber: #E8941A;
+    --dark: #1A1209;
+    --text: #2C1A05;
+    --muted: #7A6040;
+    --white: #FFFDF8;
+    --green: #2E7D32;
+    --red: #C62828;
+    --card-bg: #FFFEF9;
+    --border: #F0E0C0;
+    --purple: #5B2D8E;
+    --purple-light: #7B4DB8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); }
+
+  /* ── TOP BANNER ── */
+  .top-banner {
+    background: var(--gold);
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 7px 12px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    border-bottom: 1.5px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(212,130,26,0.08);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 20px;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--gold);
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+  }
+  .logo span { color: var(--dark); }
+
+  .delivery-badge {
+    background: var(--gold-pale);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .delivery-badge strong { color: var(--dark); display: block; font-size: 13px; }
+
+  .search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #F5ECD8;
+    border-radius: 12px;
+    padding: 0 14px;
+    gap: 8px;
+  }
+  .search-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    padding: 10px 0;
+    outline: none;
+  }
+  .search-bar input::placeholder { color: var(--muted); }
+  .search-icon { color: var(--gold); font-size: 18px; }
+
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .cart-btn:hover { background: var(--amber); }
+  .cart-count {
+    background: var(--red);
+    color: #fff;
+    border-radius: 50%;
+    width: 20px; height: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #FFF7E6 0%, #FDECC0 50%, #FAEBD7 100%);
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(212,130,26,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero p {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat strong { display: block; font-size: 22px; font-weight: 700; color: var(--gold); }
+  .stat span { font-size: 12px; color: var(--muted); }
+
+  /* ── CATEGORIES ── */
+  .categories {
+    background: var(--white);
+    padding: 18px 20px 8px;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .cat-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .cat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--card-bg);
+  }
+  .cat-pill.active, .cat-pill:hover {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main { max-width: 1200px; margin: auto; padding: 28px 20px 100px; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: var(--border);
+  }
+
+  /* ── PRODUCT GRID ── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .product-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    padding: 16px;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
+  }
+  .product-card:hover {
+    box-shadow: 0 8px 32px rgba(212,130,26,0.15);
+    transform: translateY(-2px);
+  }
+
+  .badge-strip {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .badge.bestseller { background: #FFF3CD; color: #7A5700; }
+  .badge.organic { background: #E8F5E9; color: #2E7D32; }
+  .badge.new { background: #E3F2FD; color: #1565C0; }
+
+  .product-img {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #F5DEB3, #DEB887);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+  }
+
+  .product-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  .product-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .product-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .stars { color: var(--gold-light); font-size: 13px; }
+
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .price-original {
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+  .price-discount {
+    font-size: 11px;
+    background: #E8F5E9;
+    color: var(--green);
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  /* ── ADD BUTTON ── */
+  .add-btn {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+    background: var(--white);
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .add-btn:hover { background: var(--gold); color: #fff; }
+
+  /* ── QUANTITY STEPPER ── */
+  .qty-stepper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .qty-btn {
+    width: 32px; height: 36px;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .qty-btn:hover { background: var(--amber); }
+  .qty-num {
+    width: 36px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+    background: var(--white);
+    border: none;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── TRUST STRIP ── */
+  .trust-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    background: var(--gold-pale);
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 40px;
+    border: 1.5px solid var(--border);
+  }
+  .trust-item {
+    text-align: center;
+  }
+  .trust-item .icon { font-size: 28px; margin-bottom: 6px; }
+  .trust-item strong { display: block; font-size: 13px; font-weight: 700; color: var(--dark); }
+  .trust-item span { font-size: 11px; color: var(--muted); }
+
+  /* ── CART PANEL ── */
+  .cart-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,18,9,0.45);
+    z-index: 200;
+    backdrop-filter: blur(2px);
+  }
+  .cart-overlay.open { display: block; }
+
+  .cart-panel {
+    position: fixed;
+    right: 0; top: 0; bottom: 0;
+    width: 380px;
+    max-width: 100vw;
+    background: var(--white);
+    z-index: 300;
+    box-shadow: -8px 0 32px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .cart-panel.open { transform: translateX(0); }
+
+  .cart-header {
+    padding: 20px;
+    border-bottom: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cart-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .close-btn {
+    background: #F5ECD8;
+    border: none;
+    border-radius: 8px;
+    width: 34px; height: 34px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+  .close-btn:hover { background: var(--border); }
+
+  .cart-items { flex: 1; overflow-y: auto; padding: 16px 20px; }
+
+  .cart-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .cart-item-emoji {
+    font-size: 36px;
+    width: 52px; height: 52px;
+    background: var(--gold-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-weight: 600; font-size: 14px; color: var(--dark); }
+  .cart-item-price { font-size: 13px; color: var(--gold); font-weight: 700; }
+
+  .cart-item-stepper {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .ci-btn {
+    width: 28px; height: 28px;
+    background: var(--gold-pale);
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ci-btn:hover { background: var(--gold); color: #fff; }
+  .ci-num { width: 28px; text-align: center; font-weight: 700; font-size: 14px; }
+
+  .cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .cart-empty .big { font-size: 56px; margin-bottom: 16px; }
+  .cart-empty p { font-size: 14px; }
+
+  .cart-footer {
+    padding: 20px;
+    border-top: 1.5px solid var(--border);
+    background: var(--gold-pale);
+  }
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .checkout-btn {
+    width: 100%;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .checkout-btn:hover { background: var(--amber); }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--dark);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 999;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ── CONTACT BAR ── */
+  .contact-bar {
+    background: #1A1209;
+    color: #F5DEB3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    flex-wrap: wrap;
+  }
+  .contact-bar a {
+    color: var(--gold-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .contact-bar a:hover { color: #fff; }
+  .contact-sep { color: #5A4020; }
+
+  /* ── PAY MODAL ── */
+  .pay-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,18,9,0.55);
+    z-index: 400;
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+  }
+  .pay-overlay.open { display: flex; }
+
+  .pay-modal {
+    background: var(--white);
+    border-radius: 22px;
+    width: 420px;
+    max-width: 95vw;
+    padding: 28px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  .pay-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .pay-modal-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark);
+  }
+  .pay-summary {
+    background: var(--gold-pale);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+  .pay-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 4px 0;
+    color: var(--muted);
+  }
+  .pay-summary-row.total {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+    padding-top: 10px;
+  }
+
+  .pay-input-group {
+    margin-bottom: 14px;
+  }
+  .pay-input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .pay-input-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    outline: none;
+    background: var(--card-bg);
+    transition: border-color 0.2s;
+  }
+  .pay-input-group input:focus { border-color: var(--gold); }
+
+  .pay-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .pay-method {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    background: var(--card-bg);
+  }
+  .pay-method .pm-icon { font-size: 24px; display: block; margin-bottom: 5px; }
+  .pay-method.selected, .pay-method:hover {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+    color: var(--dark);
+  }
+
+  .pay-upi-row {
+    display: none;
+    margin-bottom: 14px;
+  }
+  .pay-upi-row.show { display: block; }
+  .upi-box {
+    background: var(--gold-pale);
+    border: 1.5px dashed var(--gold);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+  .upi-id {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: 1px;
+    margin: 6px 0;
+  }
+  .upi-copy {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+
+  .pay-now-btn {
+    width: 100%;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.2s;
+  }
+  .pay-now-btn:hover { background: var(--amber); }
+
+  .whatsapp-order {
+    margin-top: 12px;
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .whatsapp-order:hover { background: #1EB85A; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    color: #C4A87A;
+    text-align: center;
+    padding: 22px 20px;
+    font-size: 13px;
+  }
+  footer strong { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero-stats { gap: 20px; }
+    .header-inner { flex-wrap: wrap; }
+    .delivery-badge { display: none; }
+    .cart-panel { width: 100vw; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .product-card { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">🚚 Free Delivery on orders above ₹599 &nbsp;|&nbsp; 🌿 100% Pure Natural Ghee – No Additives</div>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <a href="tel:8248280285">📞 +91 82482 80285</a>
+  <span class="contact-sep">|</span>
+  <a href="https://wa.me/918248280285" target="_blank">💬 WhatsApp to Order</a>
+  <span class="contact-sep">|</span>
+  <span>🕗 Mon–Sat · 9 AM – 8 PM</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">Ghee<span>Pure</span></div>
+    <div class="delivery-badge">
+      <span>Deliver to</span>
+      <strong>📍 Chennai, TN</strong>
+    </div>
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search ghee, dairy & more...">
+    </div>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 My Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">✨ Pure Natural Goodness</div>
+  <h1>Farm-Fresh <em>Ghee</em><br>Delivered Fast</h1>
+  <p>Hand-crafted from pure grass-fed cows. 100% natural. No preservatives. No shortcuts.</p>
+  <div class="hero-stats">
+    <div class="stat"><strong>50,000+</strong><span>Happy Families</span></div>
+    <div class="stat"><strong>100%</strong><span>Pure Natural</span></div>
+    <div class="stat"><strong>10-Min</strong><span>Dispatch</span></div>
+    <div class="stat"><strong>4.9★</strong><span>Customer Rating</span></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<div class="categories">
+  <div class="cat-inner">
+    <div class="cat-pill active" onclick="filterCat(this,'all')">🧈 All Products</div>
+    <div class="cat-pill" onclick="filterCat(this,'cow')">🐄 Cow Ghee</div>
+    <div class="cat-pill" onclick="filterCat(this,'sweet')">🍮 Sweets</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-item"><div class="icon">🌿</div><strong>100% Natural</strong><span>No chemicals or additives</span></div>
+    <div class="trust-item"><div class="icon">🐄</div><strong>Pure Cow Ghee</strong><span>Grass-fed cows only</span></div>
+    <div class="trust-item"><div class="icon">🍮</div><strong>Paalkova</strong><span>Fresh traditional sweet</span></div>
+    <div class="trust-item"><div class="icon">❄️</div><strong>No Preservatives</strong><span>100% pure & natural</span></div>
+    <div class="trust-item"><div class="icon">📦</div><strong>Fast Delivery</strong><span>Same-day in Chennai</span></div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <h2 class="section-title">🧈 Our Products</h2>
+  <div class="product-grid" id="productGrid"></div>
+
+</main>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <button class="close-btn" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="total-row">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <button class="checkout-btn" onclick="openPayModal()">💳 Pay Online →</button>
+    <a id="waOrderLink" href="#" target="_blank" class="whatsapp-order" style="margin-top:10px">
+      📲 Order via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- PAY MODAL -->
+<div class="pay-overlay" id="payOverlay" onclick="closePayModal(event)">
+  <div class="pay-modal" onclick="event.stopPropagation()">
+    <div class="pay-modal-header">
+      <h3>💳 Complete Payment</h3>
+      <button class="close-btn" onclick="closePayModal()">✕</button>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="pay-summary" id="paySummary"></div>
+
+    <!-- Customer Name & Phone -->
+    <div class="pay-input-group">
+      <label>Your Name</label>
+      <input type="text" id="custName" placeholder="Enter your name">
+    </div>
+    <div class="pay-input-group">
+      <label>Phone Number</label>
+      <input type="tel" id="custPhone" placeholder="Enter your phone number">
+    </div>
+    <div class="pay-input-group">
+      <label>Delivery Address</label>
+      <input type="text" id="custAddr" placeholder="Street, Area, City">
+    </div>
+
+    <!-- Payment Method -->
+    <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Select Payment Method</div>
+    <div class="pay-methods">
+      <div class="pay-method" onclick="selectPay(this,'upi')">
+        <span class="pm-icon">📱</span>UPI / GPay
+      </div>
+      <div class="pay-method" onclick="selectPay(this,'cod')">
+        <span class="pm-icon">💵</span>Cash on Delivery
+        <div style="font-size:10px;color:#2E7D32;font-weight:700;margin-top:3px;">📍 Nearby areas only</div>
+      </div>
+    </div>
+
+    <!-- COD Note -->
+    <div class="pay-upi-row" id="codBox">
+      <div class="upi-box" style="background:#E8F5E9;border-color:#2E7D32;">
+        <div style="font-size:22px;margin-bottom:6px;">🛵</div>
+        <div style="font-size:13px;font-weight:700;color:#1B5E20;">Cash on Delivery Available</div>
+        <div style="font-size:12px;color:#2E7D32;margin-top:4px;">For orders within <strong>Chennai nearby areas</strong>.<br>Pay cash when your order arrives at your door.</div>
+      </div>
+    </div>
+
+    <!-- UPI Details Box -->
+    <div class="pay-upi-row" id="upiBox">
+      <div class="upi-box">
+        <div style="font-size:12px;color:var(--muted);">Scan or pay to this UPI ID</div>
+        <div class="upi-id">8248280285@upi</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">After payment, share screenshot on WhatsApp</div>
+        <button class="upi-copy" onclick="copyUPI()">📋 Copy UPI ID</button>
+      </div>
+    </div>
+
+    <button class="pay-now-btn" onclick="confirmOrder()">✅ Confirm Order</button>
+    <a id="waConfirmLink" href="#" target="_blank" class="whatsapp-order">
+      💬 Confirm via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>GheePure</strong> · 100% Natural Cow Ghee · Made with ❤️ in India<br>
+  📞 <a href="tel:8248280285" style="color:var(--gold);text-decoration:none;">+91 82482 80285</a> &nbsp;|&nbsp;
+  💬 <a href="https://wa.me/918248280285" target="_blank" style="color:#25D366;text-decoration:none;">WhatsApp</a><br>
+  <small style="opacity:0.6">© 2025 GheePure. All rights reserved.</small>
+</footer>
+
+<script>
+const PRODUCTS = [
+  { id:1, name:'Pure Cow Ghee', sub:'250g', price:170, original:200, emoji:'🧈', badges:['bestseller'], cat:'cow', rating:4.9, reviews:1240 },
+  { id:2, name:'Pure Cow Ghee', sub:'500g', price:320, original:370, emoji:'🧈', badges:['bestseller'], cat:'cow', rating:4.9, reviews:980 },
+  { id:4, name:'Pure Cow Ghee', sub:'1kg · Family Pack', price:620, original:700, emoji:'🧈', badges:['bestseller'], cat:'cow', rating:4.9, reviews:2100 },
+  { id:9, name:'Paalkova', sub:'500g · Traditional Sweet', price:300, original:360, emoji:'🍮', badges:['new'], cat:'sweet', rating:4.8, reviews:430 },
+];
+
+let cart = {};
+let currentCat = 'all';
+
+function filterCat(el, cat) {
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  currentCat = cat;
+  renderProducts();
+}
+
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  const filtered = currentCat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === currentCat);
+  grid.innerHTML = filtered.map(p => {
+    const qty = cart[p.id] || 0;
+    const disc = Math.round(((p.original - p.price) / p.original) * 100);
+    const badgeHTML = p.badges.map(b =>
+      `<span class="badge ${b}">${b === 'bestseller' ? '🏆 Best Seller' : b === 'organic' ? '🌿 Organic' : '🆕 New'}</span>`
+    ).join('');
+    const stars = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '½' : '');
+
+    return `
+    <div class="product-card" data-id="${p.id}">
+      <div class="badge-strip">${badgeHTML}</div>
+      <div class="product-img">${p.emoji}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-sub">${p.sub}</div>
+      <div class="product-rating">
+        <span class="stars">${stars}</span>
+        <span>${p.rating} (${p.reviews.toLocaleString()})</span>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="price">₹${p.price}</div>
+          <div style="display:flex;gap:5px;align-items:center;margin-top:2px">
+            <span class="price-original">₹${p.original}</span>
+            <span class="price-discount">${disc}% off</span>
+          </div>
+        </div>
+        ${qty === 0
+          ? `<button class="add-btn" onclick="addToCart(${p.id})">+</button>`
+          : `<div class="qty-stepper">
+               <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
+               <span class="qty-num">${qty}</span>
+               <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
+             </div>`
+        }
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function addToCart(id) {
+  cart[id] = 1;
+  updateCartCount();
+  renderProducts();
+  renderCart();
+  const p = PRODUCTS.find(x => x.id === id);
+  showToast(`${p.emoji} ${p.name} added to cart!`);
+}
+
+function changeQty(id, delta) {
+  cart[id] = (cart[id] || 0) + delta;
+  if (cart[id] <= 0) delete cart[id];
+  updateCartCount();
+  renderProducts();
+  renderCart();
+}
+
+function updateCartCount() {
+  const total = Object.values(cart).reduce((a, b) => a + b, 0);
+  document.getElementById('cartCount').textContent = total;
+}
+
+function renderCart() {
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+  const ids = Object.keys(cart);
+
+  if (ids.length === 0) {
+    container.innerHTML = `<div class="cart-empty"><div class="big">🧈</div><p>Your cart is empty.<br>Add some pure ghee!</p></div>`;
+    footer.style.display = 'none';
+    return;
+  }
+
+  footer.style.display = 'block';
+  let total = 0;
+  container.innerHTML = ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id);
+    const qty = cart[id];
+    total += p.price * qty;
+    return `
+    <div class="cart-item">
+      <div class="cart-item-emoji">${p.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${p.name}</div>
+        <div class="cart-item-price">₹${p.price} × ${qty} = ₹${p.price * qty}</div>
+      </div>
+      <div class="cart-item-stepper">
+        <button class="ci-btn" onclick="changeQty(${p.id},-1);renderCart()">−</button>
+        <span class="ci-num">${qty}</span>
+        <button class="ci-btn" onclick="changeQty(${p.id},1);renderCart()">+</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('cartTotal').textContent = `₹${total.toLocaleString()}`;
+}
+
+function toggleCart() {
+  const panel = document.getElementById('cartPanel');
+  const overlay = document.getElementById('cartOverlay');
+  panel.classList.toggle('open');
+  overlay.classList.toggle('open');
+  renderCart();
+  buildWALink();
+}
+
+function buildWALink() {
+  const ids = Object.keys(cart);
+  if (!ids.length) return;
+  let lines = ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return `• ${p.name} (${p.sub}) × ${cart[id]} = ₹${p.price * cart[id]}`;
+  });
+  const total = ids.reduce((s, id) => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return s + p.price * cart[id];
+  }, 0);
+  const msg = encodeURIComponent(`Hello! I'd like to place an order:\n\n${lines.join('\n')}\n\nTotal: ₹${total}\n\nPlease confirm.`);
+  document.getElementById('waOrderLink').href = `https://wa.me/918248280285?text=${msg}`;
+}
+
+let selectedPayMethod = '';
+function openPayModal() {
+  const ids = Object.keys(cart);
+  if (!ids.length) return;
+  // Build summary
+  let rows = ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return `<div class="pay-summary-row"><span>${p.name} × ${cart[id]}</span><span>₹${p.price * cart[id]}</span></div>`;
+  }).join('');
+  const total = ids.reduce((s,id) => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return s + p.price * cart[id];
+  }, 0);
+  rows += `<div class="pay-summary-row total"><span>Total Amount</span><span>₹${total}</span></div>`;
+  document.getElementById('paySummary').innerHTML = rows;
+  // WA confirm link
+  const items = ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return `${p.name} × ${cart[id]}`;
+  }).join(', ');
+  const waMsg = encodeURIComponent(`Order confirmed!\nItems: ${items}\nTotal: ₹${total}\nPayment: ${selectedPayMethod || 'TBD'}`);
+  document.getElementById('waConfirmLink').href = `https://wa.me/918248280285?text=${waMsg}`;
+  document.getElementById('payOverlay').classList.add('open');
+}
+
+function closePayModal(e) {
+  if (!e || e.target === document.getElementById('payOverlay')) {
+    document.getElementById('payOverlay').classList.remove('open');
+  }
+}
+
+function selectPay(el, method) {
+  document.querySelectorAll('.pay-method').forEach(m => m.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPayMethod = method;
+  document.getElementById('upiBox').classList.toggle('show', method === 'upi');
+  document.getElementById('codBox').classList.toggle('show', method === 'cod');
+}
+
+function copyUPI() {
+  navigator.clipboard.writeText('8248280285@upi').then(() => showToast('✅ UPI ID copied!'));
+}
+
+function confirmOrder() {
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const addr = document.getElementById('custAddr').value.trim();
+  if (!name || !phone || !addr) { showToast('⚠️ Please fill all details'); return; }
+  if (!selectedPayMethod) { showToast('⚠️ Please select a payment method'); return; }
+  const ids = Object.keys(cart);
+  const items = ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return `${p.emoji} ${p.name} × ${cart[id]} = ₹${p.price * cart[id]}`;
+  }).join('\n');
+  const total = ids.reduce((s,id) => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return s + p.price * cart[id];
+  }, 0);
+  const pay = selectedPayMethod === 'upi' ? 'UPI / GPay' : 'Cash on Delivery';
+  const msg = encodeURIComponent(`🛒 *New Order from GheePure!*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 Address: ${addr}\n\n*Items:*\n${items}\n\n💰 *Total: ₹${total}*\n💳 Payment: ${pay}\n\nPlease confirm my order. Thank you!`);
+  window.open(`https://wa.me/918248280285?text=${msg}`, '_blank');
+  cart = {};
+  updateCartCount();
+  renderProducts();
+  document.getElementById('payOverlay').classList.remove('open');
+  document.getElementById('cartPanel').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  showToast('🎉 Order sent via WhatsApp!');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// Init
+renderProducts();
+</script>
+</body>
+</html>
