@@ -807,7 +807,8 @@
     </div>
     <div class="search-bar">
       <span class="search-icon">🔍</span>
-      <input type="text" placeholder="Search ghee, dairy & more...">
+      <input type="text" id="searchInput" placeholder="Search ghee, paalkova & more..." oninput="onSearch(this.value)">
+      <span id="clearSearch" style="cursor:pointer;color:var(--muted);font-size:18px;display:none" onclick="clearSearch()">✕</span>
     </div>
     <button class="cart-btn" onclick="toggleCart()">
       🛒 My Cart
@@ -962,6 +963,20 @@ const PRODUCTS = [
 
 let cart = {};
 let currentCat = 'all';
+let searchQuery = '';
+
+function onSearch(val) {
+  searchQuery = val.toLowerCase().trim();
+  document.getElementById('clearSearch').style.display = searchQuery ? 'block' : 'none';
+  renderProducts();
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  searchQuery = '';
+  document.getElementById('clearSearch').style.display = 'none';
+  renderProducts();
+}
 
 function filterCat(el, cat) {
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
@@ -972,7 +987,22 @@ function filterCat(el, cat) {
 
 function renderProducts() {
   const grid = document.getElementById('productGrid');
-  const filtered = currentCat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === currentCat);
+  let filtered = currentCat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === currentCat);
+  if (searchQuery) {
+    filtered = filtered.filter(p =>
+      p.name.toLowerCase().includes(searchQuery) ||
+      p.sub.toLowerCase().includes(searchQuery)
+    );
+  }
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)">
+      <div style="font-size:48px;margin-bottom:14px">🔍</div>
+      <div style="font-weight:700;font-size:16px;color:var(--dark);margin-bottom:6px">No products found</div>
+      <div style="font-size:13px">Try searching "ghee" or "paalkova"</div>
+      <button onclick="clearSearch()" style="margin-top:14px;background:var(--gold);color:#fff;border:none;border-radius:10px;padding:10px 22px;font-family:'DM Sans',sans-serif;font-weight:700;cursor:pointer;font-size:14px">Clear Search</button>
+    </div>`;
+    return;
+  }
   grid.innerHTML = filtered.map(p => {
     const qty = cart[p.id] || 0;
     const disc = Math.round(((p.original - p.price) / p.original) * 100);
